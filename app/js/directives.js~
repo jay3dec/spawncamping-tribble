@@ -13,7 +13,8 @@ angular.module('myApp.directives', []).
    return {
       restrict: 'A',
       link: function (scope, elem, attrs) {
-        var chart = new google.visualization.LineChart(elem[0]);
+        console.log(elem[0].getAttribute('id'));
+        var chart = new google.visualization.BarChart(elem[0]);
         chart.draw(scope.chart.data, scope.chart.options);
       }
     }
